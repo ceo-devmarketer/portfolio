@@ -65,7 +65,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-[#1a1a1a] via-transparent to-transparent" />
-                
+
                 <div className="absolute bottom-6 left-6 md:left-8">
                   <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
                     {project.title}
@@ -150,10 +150,10 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                         View Results
                       </button>
                     )}
-                    
-                    {isWebDev && (
+
+                    {isWebDev && project.githubLink && (
                       <a
-                        href="#"
+                        href={project.githubLink}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-white/5 text-white font-semibold hover:bg-white/10 transition-colors border border-white/10"
@@ -208,8 +208,8 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {project.gallery.map((img, idx) => (
-                      <div 
-                        key={idx} 
+                      <div
+                        key={idx}
                         onClick={() => setLightboxImage(img)}
                         className="relative h-48 rounded-lg overflow-hidden border border-white/5 hover:border-neon-blue/50 transition-all duration-300 group/image cursor-zoom-in"
                       >
@@ -243,7 +243,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 >
                   <X size={24} />
                 </button>
-                
+
                 <div className="relative w-full h-full max-w-5xl max-h-[90vh] flex items-center justify-center">
                   <Image
                     src={lightboxImage}

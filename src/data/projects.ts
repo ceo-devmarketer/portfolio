@@ -48,6 +48,7 @@ export interface Project {
   features?: string[]; // For Web Dev
   results?: string[]; // For Digital Marketing
   strategy?: string; // For Digital Marketing
+  githubLink?: string;
 }
 
 export interface CategoryProjects {
@@ -66,7 +67,8 @@ export const projectData: Record<string, CategoryProjects> = {
         title: "E-Commerce Platform",
         description: "A full-featured online store with cart, checkout, and payment integration.",
         image: ecommerceCover,
-        link: "#",
+        link: "https://github.com/ceo-devmarketer",
+        githubLink: "https://github.com/ceo-devmarketer",
         tags: ["Next.js", "Stripe", "Tailwind"],
         gallery: [ecommerceCover], // Placeholder for now
         techStack: ["Next.js 14", "TypeScript", "Stripe Connect", "Tailwind CSS", "Supabase"],
@@ -82,7 +84,8 @@ export const projectData: Record<string, CategoryProjects> = {
         title: "Portfolio Website",
         description: "A modern, responsive portfolio website with dark mode and animations.",
         image: portfolioCover,
-        link: "#",
+        link: "https://github.com/ceo-devmarketer",
+        githubLink: "https://github.com/ceo-devmarketer",
         tags: ["React", "Framer Motion"],
         gallery: [portfolioCover],
         techStack: ["React", "Framer Motion", "Vite", "Tailwind"],
@@ -107,10 +110,10 @@ export const projectData: Record<string, CategoryProjects> = {
         link: "#",
         tags: ["Facebook Ads", "Content Strategy"],
         gallery: [
-          smg1, smg2, smg3, smg4, smg5, 
-          smg6, smg7, smg8, smg9, smg10, 
-          smg11, smg12, smg13, smg14, smg15, 
-          smg16, smg17, smg18, smg19, smg20, 
+          smg1, smg2, smg3, smg4, smg5,
+          smg6, smg7, smg8, smg9, smg10,
+          smg11, smg12, smg13, smg14, smg15,
+          smg16, smg17, smg18, smg19, smg20,
           smg21, smg22, smg23, smg24, smg25
         ],
         results: [
