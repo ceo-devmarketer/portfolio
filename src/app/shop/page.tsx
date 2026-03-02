@@ -9,12 +9,20 @@ export const metadata: Metadata = {
 
 const products = [
   {
-    name: "7-Day Dedicated Website Work",
+    name: "7-Day Intensive Website Sprint",
     description:
-      "I will work on your website for 7 days, every day 4 hours focused on design, development, optimization and fixes so your site looks professional and performs better.",
-    badge: "Premium 1:1 Service",
+      "Premium 1:1 work on your website for 7 days – every day 4 focused hours on design, development, fixes and optimization so your brand looks and feels world‑class.",
+    badge: "Premium Service",
     price: "500 USDT (fixed)",
-    highlight: true,
+    premium: true,
+  },
+  {
+    name: "30-Day Dedicated Website Growth",
+    description:
+      "Long-term collaboration for 30 days – continuous improvements, new sections, A/B tests, speed & SEO tweaks to grow your website step by step.",
+    badge: "Premium Service",
+    price: "1300 USDT (fixed)",
+    premium: true,
   },
   {
     name: "USDT Dollar Management Setup",
@@ -22,6 +30,7 @@ const products = [
       "Guided setup for accepting and managing USDT payments for your online business or personal brand.",
     badge: "Crypto Ready",
     price: "Custom Pricing",
+    premium: false,
   },
   {
     name: "Virtual Card & Digital Payments",
@@ -29,6 +38,7 @@ const products = [
       "Consultation and setup help for virtual cards, subscriptions, and online payment solutions.",
     badge: "For Global Payments",
     price: "On Request",
+    premium: false,
   },
 ];
 
@@ -63,8 +73,10 @@ export default function ShopPage() {
           {products.map((product) => (
             <div
               key={product.name}
-              className={`group flex flex-col justify-between rounded-2xl border border-white/5 bg-gradient-to-br from-white/5 via-white/[0.02] to-transparent p-5 sm:p-6 shadow-[0_0_40px_rgba(0,0,0,0.6)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(0,243,255,0.25)] ${
-                product.highlight ? "md:col-span-2" : ""
+              className={`group flex flex-col justify-between rounded-2xl p-5 sm:p-6 shadow-[0_0_40px_rgba(0,0,0,0.6)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(0,243,255,0.25)] ${
+                product.premium
+                  ? "border border-neon-blue/40 bg-gradient-to-br from-neon-blue/10 via-white/[0.02] to-transparent"
+                  : "border border-white/5 bg-gradient-to-br from-white/5 via-white/[0.02] to-transparent"
               }`}
             >
               <div>
@@ -79,13 +91,7 @@ export default function ShopPage() {
 
               <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <span className="text-sm font-semibold text-neon-blue">{product.price}</span>
-                {product.highlight ? (
-                  <ShopContactOptions />
-                ) : (
-                  <button className="inline-flex w-full sm:w-auto items-center justify-center rounded-full bg-neon-purple px-4 py-2 text-xs sm:text-sm font-semibold text-white shadow-[0_0_20px_rgba(190,24,255,0.4)] transition-all hover:bg-neon-blue hover:shadow-[0_0_25px_rgba(0,243,255,0.6)]">
-                    Contact to Buy
-                  </button>
-                )}
+                <ShopContactOptions productName={product.name} />
               </div>
             </div>
           ))}
@@ -94,8 +100,9 @@ export default function ShopPage() {
         {/* Helper text */}
         <p className="mt-8 text-xs sm:text-sm text-gray-500 max-w-2xl">
           All services are delivered manually after a short chat so we can understand your exact needs (tech stack,
-          business type, and country). For the 7-day service, use WhatsApp, LinkedIn or Email from the contact options
-          to confirm your slot; for other services, use the &quot;Contact to Buy&quot; button and we&apos;ll follow up.
+          business type, and country). For premium 7-day and 30-day services, use WhatsApp, LinkedIn or Email from the
+          contact popup to confirm your slot; for other services, use the same contact popup and we&apos;ll follow up
+          with details.
         </p>
       </div>
     </main>
