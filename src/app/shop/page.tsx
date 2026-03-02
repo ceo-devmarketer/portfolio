@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import ShopContactOptions from "@/components/ShopContactOptions";
 
 export const metadata: Metadata = {
   title: "Shop | DEVMARKETER.",
@@ -8,11 +9,12 @@ export const metadata: Metadata = {
 
 const products = [
   {
-    name: "Portfolio & Landing Page Source Code",
+    name: "7-Day Dedicated Website Work",
     description:
-      "High-converting portfolio and landing page templates built with Next.js, Tailwind CSS, and modern animation.",
-    badge: "Best for Developers",
-    price: "From $19",
+      "I will work on your website for 7 days, every day 4 hours focused on design, development, optimization and fixes so your site looks professional and performs better.",
+    badge: "Premium 1:1 Service",
+    price: "500 USDT (fixed)",
+    highlight: true,
   },
   {
     name: "USDT Dollar Management Setup",
@@ -61,7 +63,9 @@ export default function ShopPage() {
           {products.map((product) => (
             <div
               key={product.name}
-              className="group flex flex-col justify-between rounded-2xl border border-white/5 bg-gradient-to-br from-white/5 via-white/[0.02] to-transparent p-5 sm:p-6 shadow-[0_0_40px_rgba(0,0,0,0.6)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(0,243,255,0.25)]"
+              className={`group flex flex-col justify-between rounded-2xl border border-white/5 bg-gradient-to-br from-white/5 via-white/[0.02] to-transparent p-5 sm:p-6 shadow-[0_0_40px_rgba(0,0,0,0.6)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(0,243,255,0.25)] ${
+                product.highlight ? "md:col-span-2" : ""
+              }`}
             >
               <div>
                 <div className="mb-3 flex items-center gap-2">
@@ -73,11 +77,15 @@ export default function ShopPage() {
                 <p className="text-sm sm:text-base text-gray-400 mb-4">{product.description}</p>
               </div>
 
-              <div className="mt-2 flex items-center justify-between gap-3">
+              <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <span className="text-sm font-semibold text-neon-blue">{product.price}</span>
-                <button className="inline-flex w-auto items-center justify-center rounded-full bg-neon-purple px-4 py-2 text-xs sm:text-sm font-semibold text-white shadow-[0_0_20px_rgba(190,24,255,0.4)] transition-all hover:bg-neon-blue hover:shadow-[0_0_25px_rgba(0,243,255,0.6)]">
-                  Contact to Buy
-                </button>
+                {product.highlight ? (
+                  <ShopContactOptions />
+                ) : (
+                  <button className="inline-flex w-full sm:w-auto items-center justify-center rounded-full bg-neon-purple px-4 py-2 text-xs sm:text-sm font-semibold text-white shadow-[0_0_20px_rgba(190,24,255,0.4)] transition-all hover:bg-neon-blue hover:shadow-[0_0_25px_rgba(0,243,255,0.6)]">
+                    Contact to Buy
+                  </button>
+                )}
               </div>
             </div>
           ))}
@@ -85,9 +93,9 @@ export default function ShopPage() {
 
         {/* Helper text */}
         <p className="mt-8 text-xs sm:text-sm text-gray-500 max-w-2xl">
-          All products are delivered manually after confirmation so we can understand your exact needs (tech stack,
-          business type, and country). After you click &quot;Contact to Buy&quot; on any product, please use the
-          contact section on the home page or email to finalize the order.
+          All services are delivered manually after a short chat so we can understand your exact needs (tech stack,
+          business type, and country). For the 7-day service, use WhatsApp, LinkedIn or Email from the contact options
+          to confirm your slot; for other services, use the &quot;Contact to Buy&quot; button and we&apos;ll follow up.
         </p>
       </div>
     </main>
