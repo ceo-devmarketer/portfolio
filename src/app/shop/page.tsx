@@ -4,7 +4,8 @@ import ShopContactOptions from "@/components/ShopContactOptions";
 
 export const metadata: Metadata = {
   title: "Shop | DEVMARKETER.",
-  description: "Digital products: website source code, USDT management, virtual cards and more.",
+  description:
+    "Premium 1:1 website work, growth retainers, USDT setup and digital payment solutions.",
 };
 
 const products = [
@@ -44,20 +45,28 @@ const products = [
 
 export default function ShopPage() {
   return (
-    <main className="min-h-screen bg-deep-dark text-white px-4 py-24 sm:px-6 lg:px-8">
+    <main className="relative min-h-screen bg-deep-dark text-white px-4 py-24 sm:px-6 lg:px-8 overflow-hidden">
+      {/* Subtle background glow */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -top-40 right-[-10%] h-64 w-64 rounded-full bg-neon-blue/20 blur-3xl" />
+        <div className="absolute -bottom-40 left-[-10%] h-72 w-72 rounded-full bg-neon-purple/25 blur-3xl" />
+      </div>
+
       <div className="mx-auto max-w-5xl">
         {/* Header */}
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mb-10 sm:mb-14">
           <div>
-            <p className="text-sm font-mono uppercase tracking-[0.25em] text-neon-blue mb-2">
-              Digital Products & Services
+            <p className="inline-flex items-center gap-2 rounded-full border border-neon-blue/30 bg-neon-blue/10 px-3 py-1 text-[11px] font-mono uppercase tracking-[0.2em] text-neon-blue mb-3">
+              <span className="h-1.5 w-1.5 rounded-full bg-neon-blue" />
+              Premium Services
             </p>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
-              Shop <span className="text-neon-blue">DEVMARKETER</span> Resources
+              Done-for-you{" "}
+              <span className="text-neon-blue">Website & Growth</span>
             </h1>
             <p className="mt-3 text-sm sm:text-base text-gray-400 max-w-xl">
-              Buy source codes and digital services that help you launch faster, look more professional, and
-              handle global payments with confidence.
+              High-touch, 1:1 services to design, build and grow your website – plus payment and USDT solutions so your
+              online presence actually brings clients.
             </p>
           </div>
           <Link
@@ -80,10 +89,15 @@ export default function ShopPage() {
               }`}
             >
               <div>
-                <div className="mb-3 flex items-center gap-2">
+                <div className="mb-3 flex items-center justify-between gap-2">
                   <span className="inline-flex items-center rounded-full bg-neon-blue/10 px-3 py-1 text-xs font-semibold text-neon-blue">
                     {product.badge}
                   </span>
+                  {product.premium && (
+                    <span className="text-[11px] font-medium uppercase tracking-[0.16em] text-gray-400">
+                      1:1 with Mahedi
+                    </span>
+                  )}
                 </div>
                 <h2 className="text-lg sm:text-xl font-semibold mb-2">{product.name}</h2>
                 <p className="text-sm sm:text-base text-gray-400 mb-4">{product.description}</p>
