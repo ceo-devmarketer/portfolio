@@ -1,11 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "export",  // Required for GitHub Pages
+  // Static export for GitHub Pages / static hosting
+  output: "export",
   images: {
-    unoptimized: true, // Required for GitHub Pages as it doesn't support Next.js Image Optimization
+    // GitHub Pages doesn't support Next.js Image Optimization
+    unoptimized: true,
   },
-  basePath: "/portfolio", // Uncomment and set this if your repo is NOT username.github.io
 };
 
 export default nextConfig;

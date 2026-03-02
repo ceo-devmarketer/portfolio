@@ -2,8 +2,29 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, FileText, ArrowRight, Send, Facebook } from "lucide-react";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  FileText,
+  ArrowRight,
+  Send,
+  Facebook,
+  Code2,
+  Globe2,
+  BarChart3,
+  ShoppingBag,
+  CreditCard,
+  Megaphone,
+  MonitorSmartphone,
+  LayoutDashboard,
+  WalletCards,
+  Rocket,
+  Sparkles,
+  ShieldCheck,
+} from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import ContactModal from "./ContactModal";
 import ResumeModal from "./ResumeModal";
 import FloatingIcons from "./FloatingIcons";
@@ -84,7 +105,7 @@ export default function Hero({ onShowProjects }: HeroProps) {
             />
           </motion.p>
 
-          <div className="flex flex-wrap justify-center lg:justify-start gap-4">
+          <div className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4">
             <button
               onClick={onShowProjects}
               className="group px-8 py-3 animate-gradient-flow bg-gradient-to-r from-neon-blue via-purple-500 to-neon-purple text-white font-bold rounded-full hover:shadow-[0_0_20px_rgba(0,243,255,0.5)] transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
@@ -106,6 +127,102 @@ export default function Hero({ onShowProjects }: HeroProps) {
               Contact
               <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </button>
+            <Link
+              href="/shop"
+              className="group px-8 py-3 sm:px-10 sm:py-3.5 lg:px-12 lg:py-4 border border-gray-600/80 bg-white/5 lg:bg-white/10 text-gray-200 text-sm sm:text-base lg:text-base font-bold rounded-full hover:bg-gray-100 hover:text-black transition-colors duration-300 flex items-center gap-3 lg:gap-4 w-auto lg:basis-full lg:shadow-[0_0_30px_rgba(0,243,255,0.25)]"
+            >
+              <span className="whitespace-nowrap">Shop</span>
+
+              {/* Animated service icons – visible from tablet up */}
+              <div className="hidden md:flex flex-1 items-center justify-center flex-wrap gap-1.5 text-gray-300">
+                <motion.span
+                  animate={{ y: [0, -2, 0], opacity: [0.8, 1, 0.8] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  className="inline-flex items-center justify-center rounded-full bg-black/25 p-1.5"
+                >
+                  <Code2 size={14} />
+                </motion.span>
+                <motion.span
+                  animate={{ y: [0, -2, 0], opacity: [0.8, 1, 0.8] }}
+                  transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+                  className="inline-flex items-center justify-center rounded-full bg-black/25 p-1.5"
+                >
+                  <Globe2 size={14} />
+                </motion.span>
+                <motion.span
+                  animate={{ y: [0, -2, 0], opacity: [0.8, 1, 0.8] }}
+                  transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
+                  className="inline-flex items-center justify-center rounded-full bg-black/25 p-1.5"
+                >
+                  <BarChart3 size={14} />
+                </motion.span>
+                <motion.span
+                  animate={{ y: [0, -2, 0], opacity: [0.8, 1, 0.8] }}
+                  transition={{ duration: 3.1, repeat: Infinity, ease: "easeInOut" }}
+                  className="inline-flex items-center justify-center rounded-full bg-black/25 p-1.5"
+                >
+                  <ShoppingBag size={14} />
+                </motion.span>
+                <motion.span
+                  animate={{ y: [0, -2, 0], opacity: [0.8, 1, 0.8] }}
+                  transition={{ duration: 3.4, repeat: Infinity, ease: "easeInOut" }}
+                  className="inline-flex items-center justify-center rounded-full bg-black/25 p-1.5"
+                >
+                  <CreditCard size={14} />
+                </motion.span>
+                <motion.span
+                  animate={{ y: [0, -2, 0], opacity: [0.8, 1, 0.8] }}
+                  transition={{ duration: 3.7, repeat: Infinity, ease: "easeInOut" }}
+                  className="inline-flex items-center justify-center rounded-full bg-black/25 p-1.5"
+                >
+                  <Megaphone size={14} />
+                </motion.span>
+                <motion.span
+                  animate={{ y: [0, -2, 0], opacity: [0.8, 1, 0.8] }}
+                  transition={{ duration: 4.0, repeat: Infinity, ease: "easeInOut" }}
+                  className="inline-flex items-center justify-center rounded-full bg-black/25 p-1.5"
+                >
+                  <MonitorSmartphone size={14} />
+                </motion.span>
+                <motion.span
+                  animate={{ y: [0, -2, 0], opacity: [0.8, 1, 0.8] }}
+                  transition={{ duration: 4.3, repeat: Infinity, ease: "easeInOut" }}
+                  className="inline-flex items-center justify-center rounded-full bg-black/25 p-1.5"
+                >
+                  <LayoutDashboard size={14} />
+                </motion.span>
+                <motion.span
+                  animate={{ y: [0, -2, 0], opacity: [0.8, 1, 0.8] }}
+                  transition={{ duration: 4.6, repeat: Infinity, ease: "easeInOut" }}
+                  className="inline-flex items-center justify-center rounded-full bg-black/25 p-1.5"
+                >
+                  <WalletCards size={14} />
+                </motion.span>
+                <motion.span
+                  animate={{ y: [0, -2, 0], opacity: [0.8, 1, 0.8] }}
+                  transition={{ duration: 4.9, repeat: Infinity, ease: "easeInOut" }}
+                  className="inline-flex items-center justify-center rounded-full bg-black/25 p-1.5"
+                >
+                  <Rocket size={14} />
+                </motion.span>
+                <motion.span
+                  animate={{ y: [0, -2, 0], opacity: [0.8, 1, 0.8] }}
+                  transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut" }}
+                  className="inline-flex items-center justify-center rounded-full bg-black/25 p-1.5"
+                >
+                  <Sparkles size={14} />
+                </motion.span>
+                <motion.span
+                  animate={{ y: [0, -2, 0], opacity: [0.8, 1, 0.8] }}
+                  transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+                  className="inline-flex items-center justify-center rounded-full bg-black/25 p-1.5"
+                >
+                  <ShieldCheck size={14} />
+                </motion.span>
+              </div>
+
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
           </div>
 
           <div className="mt-12 flex justify-center lg:justify-start gap-6">
